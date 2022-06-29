@@ -48,7 +48,8 @@ public class CodeLearnExample : MonoBehaviour
         // Di chuyển lên xuống
         zInput = Input.GetAxis("Vertical");  // Nhận được giá trị của trục tung khi nhấn nút "lên-xuống" hoặc w-s
 
-        // rb.AddForce(xInput * speed, 0, zInput * speed);
+        //rb.AddForce(xInput * speed, 0, zInput * speed);
+        rb.AddForce(new Vector3(xInput * speed, 0, zInput * speed));
 
     }
 
