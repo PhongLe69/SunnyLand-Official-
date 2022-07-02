@@ -128,13 +128,22 @@ public class Fox : MonoBehaviour
 
                 AudioManager.instance.playSFX("landing");
             }
+
+            // Check if any of the colliders is moving platform
+            // Parent it to this platform
+            foreach(var c in colliders)
+            {
+                if (c.tag == "MovingPlatform")
+                    transform.parent = c.transform;
+            }
         }
         else
         {
+            // Un-parent the tranform
+            transform.parent = null;
+
             if (wasGrounded)
-            {
                 StartCoroutine(CoyoteJumpDelay());
-            }
         }
 
         //As long as we are grounded the "Jump" bool

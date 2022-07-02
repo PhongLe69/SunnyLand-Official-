@@ -2,7 +2,7 @@
 
 public class Shooting : MonoBehaviour
 {
-    public GameObject shootingItem;   // bắn vật phẩm
+    public GameObject shootingItem;   // bắn vật phẩm  
     public Transform shootingPoint;   // điểm bắn
     public bool canShoot = true;     // 
 
