@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     // Collider Trigger
     // Interaction Type
 
-    public enum InteractionType { NONE, PickUp, Examine}
+    public enum InteractionType { NONE, PickUp, Examine, GrabDrop}
 
     public enum ItemType { Static, Consumables}
     [Header("Attributes")]
@@ -41,6 +41,10 @@ public class Item : MonoBehaviour
             case InteractionType.Examine:
                 //Call the Examine item in the interaction system
                 FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                break;
+            case InteractionType.GrabDrop:
+                // Grab interaction
+                FindObjectOfType<InteractionSystem>().GrabDrop();
                 break;
             default:
                 Debug.Log("NULL ITEM");
