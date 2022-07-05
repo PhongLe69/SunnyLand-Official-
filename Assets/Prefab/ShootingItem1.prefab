@@ -98,7 +98,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.001940161, y: -0.01027292}
@@ -148,7 +148,7 @@ Animator:
   m_GameObject: {fileID: 6342384262468404823}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9f5ba6ba9b34d7844acf5d0dc9b5bd6f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4c73479277f9a746b95a4925305c357, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

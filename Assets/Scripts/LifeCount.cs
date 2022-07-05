@@ -8,6 +8,11 @@ public class LifeCount : MonoBehaviour
     public Image[] lives;
     public int livesRemaning;
 
+    /*private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     // 4 lives - 4 images (0, 1, 2, 3)
     // 3 lives - 3 images (0, 1, 2, [3])
     // 2 lives - 2 images (0, 1, [2], [3])

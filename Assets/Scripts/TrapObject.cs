@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class TrapObject : MonoBehaviour
 {
+
     //int decateAmount = 25;
     private void Reset()
     {

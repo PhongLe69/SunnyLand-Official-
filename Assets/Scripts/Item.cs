@@ -6,6 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
+    
+
     // Collider Trigger
     // Interaction Type
 

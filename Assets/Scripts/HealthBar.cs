@@ -8,6 +8,12 @@ public class HealthBar : MonoBehaviour
     public Image fillBar;
     public float health;
 
+
+    /*private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     // 100 health => 1 fill amount
     // 45 health  => 0.45 fill amount
     public void LoseHealth(int value)

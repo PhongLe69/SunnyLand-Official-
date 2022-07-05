@@ -7,6 +7,11 @@ public class AudioManager: MonoBehaviour
     public static AudioManager instance;
     private void Awake() { instance = this; }
 
+    /*private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     // Sound Effects
     public AudioClip sfx_landing, sfx_cherry;
     // Music

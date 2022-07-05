@@ -43,6 +43,11 @@ public class Fox : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    /*private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     void Update()
     {
         if (CanMoveOrInteract() == false)
