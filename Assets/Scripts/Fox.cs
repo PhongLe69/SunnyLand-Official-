@@ -41,19 +41,27 @@ public class Fox : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        ResetPlayer();
     }
 
-    /*private void Start()
+    private void OnEnable()
     {
-        DontDestroyOnLoad(gameObject);
-    }*/
+        PlayerHealth.INSTANCE.OnHealthZero += Die;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHealth.INSTANCE.OnHealthZero -= Die;
+    }
 
     void Update()
     {
-        if (CanMoveOrInteract() == false)
+        /*if (CanMoveOrInteract() == false)
         {
+            Debug.Log("Cannot Move");
             return;
-        }
+        }*/
 
         // Store the Horizontal value
         horizontalValue = Input.GetAxisRaw("Horizontal");

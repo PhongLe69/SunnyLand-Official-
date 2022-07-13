@@ -16,7 +16,7 @@ public class TrapObject : MonoBehaviour
         if (collision.tag == "Player")
         {
             //FindObjectOfType<HealthBar>().LoseHealth(decateAmount);
-            FindObjectOfType<LifeCount>().LoseLife();
+            FindObjectOfType<PlayerHealthManager>().LoseLife();
         }
     }
 }

@@ -55,6 +55,5 @@ public class Item : MonoBehaviour
 
         // Invoke (call) the custome event (s)
         customEvent.Invoke();
-
     }
 }

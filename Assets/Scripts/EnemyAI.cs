@@ -85,7 +85,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            FindObjectOfType<LifeCount>().LoseLife();
+            FindObjectOfType<PlayerHealthManager>().LoseLife();
         }
     }
 }

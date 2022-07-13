@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     [Header("Detection Parameters")] 
     // Detection Point

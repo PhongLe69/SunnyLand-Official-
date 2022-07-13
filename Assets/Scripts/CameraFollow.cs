@@ -8,6 +8,11 @@ public class CameraFollow : MonoBehaviour
     [Range(1,10)]
     public float smoothFactor;
 
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").gameObject.transform;  
+    }
+
     private void FixedUpdate()
     {
         Follow();
