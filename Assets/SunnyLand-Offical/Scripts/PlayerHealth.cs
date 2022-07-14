@@ -6,10 +6,13 @@ public class PlayerHealth : HealthProfile
 {
     public static readonly int DEFAULT_PLAYER_HEALTH = 4;
 
+    #region Singleton implement
     private static PlayerHealth instance;
 
     private PlayerHealth() 
     {
+        MaxHealth = DEFAULT_PLAYER_HEALTH;
+
         ResetHealth();   
     }
 
@@ -21,9 +24,10 @@ public class PlayerHealth : HealthProfile
             return instance;
         }
     }
+    #endregion
 
     public override void ResetHealth()
     {
-        Health = DEFAULT_PLAYER_HEALTH;
+        Health = MaxHealth;
     }
 }
