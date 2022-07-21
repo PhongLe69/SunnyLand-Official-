@@ -8,6 +8,8 @@ TagManager:
   - MovingPlatform
   - pushable
   - Inventory
+  - OneWayPlatform
+  - Hurtbox
   layers:
   - Default
   - TransparentFX

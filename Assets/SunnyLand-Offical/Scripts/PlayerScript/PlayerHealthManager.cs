@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
-    [SerializeField] int baseHealth = 4;
+    //[SerializeField] int baseHealth = 4;
 
     public Image[] lives;
     public int livesRemaning;
