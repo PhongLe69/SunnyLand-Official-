@@ -25,6 +25,7 @@ public class Fox : MonoBehaviour
     float horizontalValue;
     float runSpeedModifier = 2f;
     float crouchSpeedModifier = 0.5f;
+    float dirX;
 
     [SerializeField] bool isGrounded;
     bool isRunning;
@@ -34,6 +35,9 @@ public class Fox : MonoBehaviour
     bool coyoteJump;
     bool isSliding;
     bool isDead = false;
+    bool isHurting;
+
+    Vector3 localScale;
 
     void Awake()
     {
@@ -93,12 +97,72 @@ public class Fox : MonoBehaviour
         
         // Check if we are touching a wall to slide on it
         WallCheck();
+
     }
 
     void FixedUpdate()
     {
         GroundCheck();
         Move(horizontalValue, crouchPressed);
+
+
+        // Hurting
+        /*if (!isHurting)
+            rb.velocity = new Vector2(dirX, rb.velocity.y);*/
+    }
+
+    /*void LateUpdate()
+    {
+        CheckWhereToFace();
+    }
+
+    void CheckWhereToFace()
+    {
+        if (dirX > 0)
+            facingRight = true;
+        else if (dirX < 0)
+            facingRight = false;
+
+        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
+            localScale.x *= -1;
+
+        transform.localScale = localScale;
+
+    }*/
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        /*if (col.gameObject.name.Equals("Fire"))
+        {
+            healthPoints -= 1;
+        }*/
+
+        if (col.gameObject.tag.Equals("Hurtbox"))
+        {
+            animator.SetTrigger("isHurting");
+            StartCoroutine("Hurt");
+        }
+        /*else
+        {
+            dirX = 0;
+            isDead = true;
+            animator.SetTrigger("isDead");
+        }*/
+    }
+
+    IEnumerator Hurt()
+    {
+        isHurting = true;
+        rb.velocity = Vector2.zero;
+
+        if (facingRight)
+            rb.AddForce(new Vector2(-3500f, 300f));
+        else
+            rb.AddForce(new Vector2(3500f, 300f));
+
+        yield return new WaitForSeconds(0.5f);
+
+        isHurting = false;
     }
 
     private void OnDrawGizmosSelected()

@@ -3,7 +3,13 @@ guid: ce4791079f6af5c4f8aa49107862d7e0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sfx_landing: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  - sfx_cherry: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  - music_tiktok: {instanceID: 0}
+  - music_bobo: {instanceID: 0}
+  - currentMusicObject: {instanceID: 0}
+  - soundObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

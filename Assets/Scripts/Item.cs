@@ -6,7 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
-    
 
     // Collider Trigger
     // Interaction Type
@@ -22,6 +21,8 @@ public class Item : MonoBehaviour
     [Header("Custom Events")]
     public UnityEvent customEvent;
     public UnityEvent consumeEvent;
+    public AudioClip soundEffect;
+    public GameObject pickupEffect;
 
 
     private void Reset()
@@ -36,7 +37,10 @@ public class Item : MonoBehaviour
         {
             case InteractionType.PickUp:
                 // Add the object to the PickUpItems list
-                    FindObjectOfType<InventorySystem>().PickUp(gameObject);
+                FindObjectOfType<InventorySystem>().PickUp(gameObject);
+                AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+                Instantiate(pickupEffect, transform.position, Quaternion.identity);
+
                 // Disable
                 gameObject.SetActive(false);
                 break;

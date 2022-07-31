@@ -4,9 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - New tag
   - MovingPlatform
   - pushable
+<<<<<<< Updated upstream
+=======
+  - Inventory
+  - OneWayPlatform
+  - Hurtbox
+  - Box
+  - Gem
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
