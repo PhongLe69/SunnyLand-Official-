@@ -4,16 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MovingPlatform
-  - pushable
-<<<<<<< Updated upstream
-=======
-  - Inventory
-  - OneWayPlatform
   - Hurtbox
-  - Box
+  - MovingPlatform
+  - OneWayPlatform
+  - pushable
   - Gem
->>>>>>> Stashed changes
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -21,11 +17,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
   - Ground
-  - Wall
-  - Item
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -48,9 +44,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2668814565
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

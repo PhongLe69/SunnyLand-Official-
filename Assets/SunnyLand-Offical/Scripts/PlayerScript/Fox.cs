@@ -156,9 +156,9 @@ public class Fox : MonoBehaviour
         rb.velocity = Vector2.zero;
 
         if (facingRight)
-            rb.AddForce(new Vector2(-3500f, 300f));
+            rb.AddForce(new Vector2(-3500f, 400f));
         else
-            rb.AddForce(new Vector2(3500f, 300f));
+            rb.AddForce(new Vector2(3500f, 400f));
 
         yield return new WaitForSeconds(0.5f);
 
