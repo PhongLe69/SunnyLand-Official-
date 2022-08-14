@@ -17,4 +17,16 @@ public class GemPicker : MonoBehaviour
             //Destroy(other.gameObject);
         }
     }
+    
+    public bool PickUpItem(GameObject obj)
+    {
+        switch (obj.tag)
+        {
+            case "Currency":
+                return true;
+            default:
+                Debug.LogWarning($"WARNING: No handler implemented for tag {obj.tag}.");
+                return false;
+        }
+    }
 }

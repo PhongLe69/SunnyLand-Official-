@@ -337,7 +337,7 @@ public class Fox : MonoBehaviour
         if (!crouchFlag)
         {
             if (Physics2D.OverlapCircle(overheadCheckCollider.position, overheadCheckRadius, groundLayer))
-                crouchFlag = true;
+                crouchFlag = true;  
         }
 
         animator.SetBool("Crouch", crouchFlag);

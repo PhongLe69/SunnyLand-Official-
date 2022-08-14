@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 2793018158560730912}
   - component: {fileID: 2793018158560730919}
   m_Layer: 6
-  m_Name: Box
+  m_Name: Small Box
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

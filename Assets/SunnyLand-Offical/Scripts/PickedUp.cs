@@ -21,8 +21,9 @@ public class PickedUp : MonoBehaviour
             bool pickedUp = manager.PickedupItem(gameObject);
             if (pickedUp)
             {
-                anim.Play("PickedUp");
-                Destroy(gameObject, 0.1f);
+                //anim.Play("PickedUp");
+                //Destroy(gameObject, 0.1f);
+
                 RemoveItem();
             }
         }
@@ -30,11 +31,23 @@ public class PickedUp : MonoBehaviour
 
     private void RemoveItem()
     {
-        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
+
         Instantiate(pickupEffect, transform.position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         Destroy(gameObject);
     }
-    
 
-    
+    /*private void PickUp()
+    {
+        anim.SetTrigger("PickedUp");
+        pickupEffect.SetActive(false);
+    }
+
+    public void PickedUpItem()
+    {
+        PickUp();
+    }*/
+
+
+
 }
