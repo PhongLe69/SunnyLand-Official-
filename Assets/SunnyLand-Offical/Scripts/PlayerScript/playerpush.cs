@@ -33,6 +33,8 @@ public class playerpush : MonoBehaviour
 		}
 		else if (Input.GetKeyUp(KeyCode.F))
 		{
+			//Code ch? ? trong cái code block này thôi
+
 			box.GetComponent<FixedJoint2D>().enabled = false;
 			//box.GetComponent<boxpull>().beingPushed = false;
 		}
@@ -45,8 +47,6 @@ public class playerpush : MonoBehaviour
 		Gizmos.color = Color.yellow;
 
 		Gizmos.DrawLine(transform.position, (Vector2)transform.position + Vector2.right * transform.localScale.x * distance);
-
-
 
 	}
 }

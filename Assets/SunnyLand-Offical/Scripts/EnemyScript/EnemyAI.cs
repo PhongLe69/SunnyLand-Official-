@@ -83,9 +83,11 @@ public class EnemyAI : MonoBehaviour
 
     private void OntriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            FindObjectOfType<PlayerHealthManager>().LoseLife();
-        }
+        PlayerHealthManager playerHealthManager;
+
+        bool doesTouchPlayer = collision.gameObject.TryGetComponent(out playerHealthManager);
+
+        if (doesTouchPlayer)
+            playerHealthManager.LoseLife();
     }
 }

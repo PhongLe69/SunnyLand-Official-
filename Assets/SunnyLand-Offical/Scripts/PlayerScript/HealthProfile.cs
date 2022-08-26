@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class HealthProfile
 {
-    int health;
+    protected int health;
+    protected float invincibleDuration;
+
+    float takeDamageTime = 0;
 
     public int Health { get => health;
         protected set
@@ -26,13 +29,24 @@ public class HealthProfile
         }
     }
 
+    public bool IsInvincible { get => (Time.time - takeDamageTime <= invincibleDuration); }
+
     public delegate void HealthEvent();
     public event HealthEvent OnHealthChange;
+    public event HealthEvent OnTakeDamage;
     public event HealthEvent OnHealthZero;
 
     public void TakeDamage(int damage)
     {
+        if (IsInvincible)
+            return;
+
         Health -= damage;
+
+        takeDamageTime = Time.time;
+
+        if (OnTakeDamage != null)  
+            OnTakeDamage.Invoke();
     }
 
     public virtual void ResetHealth() { }

@@ -10,17 +10,16 @@ public class EnemyHP : MonoBehaviour
     {
         currentHP = enemyHP;
     }
-    // Update is called once per frame
-    void Update()
+
+    public void TakeDamage(int damage)
     {
+        Debug.Log("Enemy take damage: " + gameObject.name);
+
+        currentHP -= damage;
+
         if (currentHP <= 0)
         {
             Destroy(transform.parent.gameObject);
         }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHP -= damage;
     }
 }

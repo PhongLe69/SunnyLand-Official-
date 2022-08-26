@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PickedUp : MonoBehaviour
 {
+    [SerializeField]
+    private PickUpType type = PickUpType.Gem;
 
     public AudioClip soundEffect;
     public GameObject pickupEffect;
@@ -13,7 +15,7 @@ public class PickedUp : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerManager manager = collision.GetComponent<PlayerManager>();
         if (manager)
@@ -27,11 +29,16 @@ public class PickedUp : MonoBehaviour
                 RemoveItem();
             }
         }
+    }*/
+
+    public PickUpType OnPickUp()
+    {
+        RemoveItem();
+        return type;
     }
 
     private void RemoveItem()
     {
-
         Instantiate(pickupEffect, transform.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(soundEffect, transform.position);
         Destroy(gameObject);
@@ -47,7 +54,10 @@ public class PickedUp : MonoBehaviour
     {
         PickUp();
     }*/
-
-
-
 }
+
+public enum PickUpType
+{
+    Gem,
+    None,
+} 

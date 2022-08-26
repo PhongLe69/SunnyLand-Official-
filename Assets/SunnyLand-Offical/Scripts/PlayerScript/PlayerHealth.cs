@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : HealthProfile
 {
     public static readonly int DEFAULT_PLAYER_HEALTH = 4;
+    public static readonly float DEFAULT_PLAYER_INVICIBLE_DURATION = 0.3f;
 
     private static PlayerHealth instance;
 
@@ -17,6 +18,8 @@ public class PlayerHealth : HealthProfile
         {
             if (instance == null)
                 instance = new PlayerHealth();
+
+            instance.invincibleDuration = DEFAULT_PLAYER_INVICIBLE_DURATION;
 
             return instance;
         }

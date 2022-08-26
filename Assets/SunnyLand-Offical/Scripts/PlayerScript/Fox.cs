@@ -52,11 +52,13 @@ public class Fox : MonoBehaviour
     private void OnEnable()
     {
         PlayerHealth.INSTANCE.OnHealthZero += Die;
+        PlayerHealth.INSTANCE.OnTakeDamage += OnHurt;
     }
 
     private void OnDisable()
     {
         PlayerHealth.INSTANCE.OnHealthZero -= Die;
+        PlayerHealth.INSTANCE.OnTakeDamage -= OnHurt;
     }
 
     void Update()
@@ -130,30 +132,23 @@ public class Fox : MonoBehaviour
 
     }*/
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        /*if (col.gameObject.name.Equals("Fire"))
-        {
-            healthPoints -= 1;
-        }*/
 
-        if (col.gameObject.tag.Equals("Hurtbox"))
-        {
-            animator.SetTrigger("isHurting");
-            StartCoroutine("Hurt");
-        }
-        /*else
-        {
-            dirX = 0;
-            isDead = true;
-            animator.SetTrigger("isDead");
-        }*/
+    public void OnHurt()
+    {
+        StartCoroutine(OnHurt_Corou());
     }
 
-    IEnumerator Hurt()
+    IEnumerator OnHurt_Corou()
     {
         isHurting = true;
         rb.velocity = Vector2.zero;
+
+        //Cause: OnTriggerEnter2D của EnemyAI
+        //Effect (Cause): Player Take Damage qua method Lose Life
+        //Lose Life: tọa độ của enemy vào Player Health. Ở đây mình ghi tọa độ cái thằng vừa đánh mình.
+        //PlayerHealth enemyPos = tọa độ của enemy
+        //Có tọa độ enemy, xác định là enemy bên trái hay phải so với mình, và nhảy theo hướng ngược lại.
+        //playerPos.x, y và enemyPos.x,y so sánh x
 
         if (facingRight)
             rb.AddForce(new Vector2(-3500f, 400f));
