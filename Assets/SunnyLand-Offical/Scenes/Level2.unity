@@ -34530,6 +34530,8 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
   smoothFactor: 4
+  minValues: {x: 0, y: 0, z: 0}
+  maxValues: {x: 0, y: 0, z: 0}
 --- !u!1 &1728621420
 GameObject:
   m_ObjectHideFlags: 0
@@ -37756,7 +37758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iLevelToLoad: 0
-  sLevelToLoad: 
+  sLevelToLoad: Level3
   useIntegerToLoadLevel: 1
 --- !u!61 &3382571721147786001
 BoxCollider2D:

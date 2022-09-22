@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/SunnyLand-Offical/Scenes/Level2.unity
     guid: acecde8ac929f0c4ebc20f00474b650c
   - enabled: 1
-    path: Assets/SunnyLand-Offical/Scenes/Level3.unity
+    path: Assets/SunnyLand-Offical/Scenes/TextLevel.unity
     guid: e180af69cf4977949ad12def5365a94f
+  - enabled: 1
+    path: Assets/SunnyLand-Offical/Scenes/demo 2.unity
+    guid: bc9872ad54fe5cf4d801f5af356e0cd6
+  - enabled: 1
+    path: Assets/SunnyLand-Offical/Scenes/demo 1.unity
+    guid: e21f567e690431040ad706dfd2b694ae
   m_configObjects: {}
