@@ -21,6 +21,8 @@ public class Fox : MonoBehaviour
     [SerializeField] float jumpPower = 500;
     [SerializeField] float slideFactor = 0.2f;
     [SerializeField] int totalJumps;
+    public Transform keyFollowPoint;
+    public Key followingKey;
     int availableJumps;
     float horizontalValue;
     float runSpeedModifier = 2f;
