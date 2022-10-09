@@ -20,13 +20,17 @@ public class Stomper : MonoBehaviour
         if (other.gameObject.tag == "Hurtbox")
         {
             //Add a code to detect an onrunning coroutine. Cannot deal dmg to other enemies if the previous coroutine is still running
-            StartCoroutine(DelayedInvoke(0.05f, () =>
+            StartCoroutine(DelayedInvoke(0.01f, () =>
             {
                 if (!PlayerHealth.INSTANCE.IsInvincible)
                 {
                     //remember to fix the bug that other.gameobject is null
-                    other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
-                    theRB2D.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+                    try
+                    {
+                        other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
+                        theRB2D.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+                    }
+                    catch { }
                 }
             })
             );

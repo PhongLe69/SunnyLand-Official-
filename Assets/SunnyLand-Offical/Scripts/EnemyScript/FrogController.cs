@@ -112,7 +112,7 @@ public class FrogController : MonoBehaviour
             direction = -1;
         }
         rb.velocity = new Vector2(jumpForceX * direction, jumpForceY);
-        Debug.Log("Jump!");
+        //Debug.Log("Jump!");
     }
 
     void ChangeAnimation(Animations newAnim)

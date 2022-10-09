@@ -23,6 +23,7 @@ public class Key : MonoBehaviour
     void Start()
     {
         StartCoroutine(ScaleObject(targetPos, 10f));
+        //StartCoroutine(MoveObject(targetPos, 10f));
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Key : MonoBehaviour
             {
                 Fox thePlayer = FindObjectOfType<Fox>();    
                 followTarget = thePlayer.keyFollowPoint;
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.1f);
                 isFollowing = true;
                 thePlayer.followingKey = this;
             }

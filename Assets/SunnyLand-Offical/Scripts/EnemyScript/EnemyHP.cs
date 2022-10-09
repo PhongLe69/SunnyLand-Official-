@@ -19,7 +19,11 @@ public class EnemyHP : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            Destroy(transform.parent.gameObject);
+            if (gameObject != null)
+            {
+                // Do something  
+                Destroy(transform.parent.parent.gameObject);
+            }
         }
     }
 }
