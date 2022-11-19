@@ -50,6 +50,9 @@ TagManager:
   - name: MidBackground
     uniqueID: 1826485415
     locked: 0
+  - name: Foreground
+    uniqueID: 2002790091
+    locked: 0
   - name: Decorate
     uniqueID: 506156421
     locked: 0
@@ -61,6 +64,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Particle
+    uniqueID: 3132697503
     locked: 0
   - name: Boxes
     uniqueID: 1636258743

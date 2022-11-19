@@ -65,7 +65,7 @@ public class VerticalPlatform : MonoBehaviour
             reset = false;
         }*/
 
-        if (IsDoublePressed(KeyCode.S, 0.2f))
+        if (IsDoublePressed(KeyCode.S, 0.2f) || IsDoublePressed(KeyCode.DownArrow, 0.2f))
         {
             StartCoroutine(FlipEffector(0.3f));
         }

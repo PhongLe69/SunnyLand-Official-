@@ -43,9 +43,12 @@ public class Door : MonoBehaviour
             }
         }
 
-        if(doorOpen && Vector3.Distance(thePlayer.transform.position, transform.position) < 1.5f && Input.GetAxis("Vertical") > 0.1f)
+        //Debug.Log("Qua duoc ma!!" + doorOpen + " - " + Vector3.Distance(thePlayer.transform.position, transform.position) + " - " + Input.GetAxis("Vertical"));
+
+        if (doorOpen && Vector2.Distance(thePlayer.transform.position, transform.position) < 1.5f && Input.GetAxis("Vertical") > 0.1f)
         {
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
             LoadScene();
         }
     }
