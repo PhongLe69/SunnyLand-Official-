@@ -21,18 +21,18 @@ public class BatFlying : MonoBehaviour
     {
         float x = Random.Range(-9.0f, 9.0f);
         float y = Random.Range(-6.0f, 6.0f);
-        target.transform.position = new Vector3(x, y, 0);
+        target.transform.position = new Vector2(x, y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 vectorToTarget = target.transform.position - transform.position;
+        Vector2 vectorToTarget = target.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
         Quaternion qt = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, qt, Time.deltaTime * rotationSpeed);
         rg2d.velocity = transform.right * speed;
-        float dist = Vector3.Distance(target.transform.position, transform.position);
+        float dist = Vector2.Distance(target.transform.position, transform.position);
         if (dist < 2)
         {
             changePosition();

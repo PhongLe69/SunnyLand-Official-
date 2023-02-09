@@ -6,6 +6,7 @@ public class BezierFollow : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public new BoxCollider2D collider2D;
+
     protected Animator animator;
 
     [SerializeField]
@@ -76,6 +77,7 @@ public class BezierFollow : MonoBehaviour
         Vector2 p2 = routes[routeNum].GetChild(2).position;
         Vector2 p3 = routes[routeNum].GetChild(3).position;
 
+
         while (tParam < 1)
         {
             tParam += Time.deltaTime * speedModifier;
@@ -86,19 +88,23 @@ public class BezierFollow : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        animator.SetBool("isFly", false);
+        animator.SetBool("isIdle", true);
+
         tParam = 0f;
 
         routeToGo += 1; 
         collider2D.enabled = true;
-        animator.SetBool("isFly", false);
-        animator.SetBool("isIdle", true);
+        
 
-        /*if (routeToGo > routes.Length - 1)
+        if (routeToGo > routes.Length - 1)
         {
             routeToGo = 0;
-        }*/
+        }
 
         //coroutineAllowed = true;
 
     }
+
+    
 }
